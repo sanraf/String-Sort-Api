@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+String Sorter API
+Overview
+String Sorter API is a simple web service that accepts a string, converts it to lowercase, splits it into individual characters, sorts them alphabetically, and returns the sorted characters as a list. The API is deployed on Vercel, making it easily accessible for testing and integration.
 
-## Getting Started
+Features
+Receives a string as input.
+Converts the string to lowercase to ensure uniformity.
+Splits the string into individual characters.
+Sorts the characters alphabetically.
+Returns the sorted characters as a JSON response.
+Technologies Used
+React.js: Frontend framework used for the user interface.
+Vercel: Platform used for deployment.
+JavaScript: Programming language used for backend processing.
+Supabase: Used for testing the API endpoint.
+Setup and Installation
+Follow the steps below to set up the project on your local machine:
 
-First, run the development server:
+Clone the Repository:
 
-```bash
+bash
+Copy code
+git clone https://github.com/your-username/string-sorter-api.git
+cd string-sorter-api
+Install Dependencies: Make sure you have Node.js installed. Then run:
+
+bash
+Copy code
+npm install
+Run the Project Locally: To start the development server, use:
+
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The app should be running on http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Deploy to Vercel:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+If you haven't already, install the Vercel CLI:
+bash
+Copy code
+npm install -g vercel
+Deploy the app to Vercel:
+bash
+Copy code
+vercel
+API Usage
+Endpoint
+The main API endpoint to be used for sorting the string is:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+lua
+Copy code
+https://string-sort-api.vercel.app/api/sort-string
+Method: POST
+Request Body
+The API expects a JSON object with a field called data. Here is an example of the request body:
 
-## Learn More
+json
+Copy code
+{
+  "data": "Example"
+}
+Response
+The response will be a JSON object containing the sorted characters as a list:
 
-To learn more about Next.js, take a look at the following resources:
+json
+Copy code
+{
+  "word": ["a", "e", "e", "l", "m", "p", "x"]
+}
+Error Handling
+If the input is not a string, the API will return an error:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+json
+Copy code
+{
+  "error": "Invalid input. Data must be a string."
+}
+In case of server errors, the response will be:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+json
+Copy code
+{
+  "error": "Server error. Please check your inputs."
+}
+Testing the API
+Manual Testing with Postman:
 
-## Deploy on Vercel
+Send a POST request to your endpoint URL with the JSON body as shown above.
+Verify that the response returns the sorted list of characters.
+Automated Testing with Supabase:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+App UI
+https://string-sort-api.vercel.app/
