@@ -15,7 +15,7 @@ export async function POST(request) {
     }
 
 
-    const sortedArray = data.split('').sort();
+    const sortedArray = data.toLowerCase().split('').sort();
 
 
     return NextResponse.json({ word: sortedArray });
