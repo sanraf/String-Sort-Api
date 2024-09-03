@@ -23,7 +23,7 @@ export default function DisplayResponse() {
       }
 
       const data = await res.json();
-      // Convert the sorted array back to a string and display it
+      
       setResponse(data.word.join(''));
     } catch (error) {
       setResponse('Error fetching data');
@@ -41,7 +41,7 @@ export default function DisplayResponse() {
         placeholder="Enter a string"
 
         style={{
-            color: 'black', // Set the font color to black
+            color: 'black', 
             padding: '8px',
             border: '1px solid #ccc',
             borderRadius: '4px',
