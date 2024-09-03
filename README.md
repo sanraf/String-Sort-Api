@@ -20,7 +20,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/string-sorter-api.git
+https://github.com/sanraf/String-Sort-Api.git
 cd string-sorter-api
 Install Dependencies: Make sure you have Node.js installed. Then run:
 
