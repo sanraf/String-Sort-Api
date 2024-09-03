@@ -48,9 +48,9 @@ API Usage
 Endpoint
 The main API endpoint to be used for sorting the string is:
 
-lua
+
 Copy code
-https://string-sort-api.vercel.app/api/sort-string
+https://string-sort-api.vercel.app/
 Method: POST
 Request Body
 The API expects a JSON object with a field called data. Here is an example of the request body:
@@ -88,7 +88,4 @@ Manual Testing with Postman:
 
 Send a POST request to your endpoint URL with the JSON body as shown above.
 Verify that the response returns the sorted list of characters.
-Automated Testing with Supabase:
 
-App UI
-https://string-sort-api.vercel.app/
